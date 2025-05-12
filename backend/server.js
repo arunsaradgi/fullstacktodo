@@ -10,7 +10,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://your-vercel-domain.vercel.app'],
+  origin: [
+    'http://localhost:5173',
+    'https://your-app-name.vercel.app'  // Replace this with your actual Vercel domain
+  ],
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   credentials: true
 }));
@@ -34,4 +37,4 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-}); 
+});
